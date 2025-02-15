@@ -1,0 +1,19 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">SignUp</h2>
+        <form method="post" {% if role == seller %} action="seller_signup"{%endif%}>
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          <button type="submit" class="btn btn-primary">SignUp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  {% endblock content %}
